@@ -146,16 +146,12 @@
       this.each(function(index) {
         var $l = $(this),
             data = $l.data('cluetip');
-	// next iteration due to no data available
-	if (!data) {
-	  return true;
-	}
-
-        $(data.selector).remove();
-        $.removeData(this, 'title');
-        $.removeData(this, 'cluetip');
-
-        if (data.title) {
+        if ( data ) {
+          $(data.selector).remove();
+          $.removeData(this, 'title');
+          $.removeData(this, 'cluetip');
+        }
+        if (data && data.title) {
           $l.attrProp('title', data.title);
         }
         $l.unbind('.cluetip').unbind('cluetipMoc');
