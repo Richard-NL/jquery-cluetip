@@ -150,11 +150,11 @@
 	    if (!data) {
 		  return true;
 	  	}
-        if ( data ) {
-          $(data.selector).remove();
-          $.removeData(this, 'title');
-          $.removeData(this, 'cluetip');
-        }
+
+        $(data.selector).remove();
+        $.removeData(this, 'title');
+        $.removeData(this, 'cluetip');
+
         if (data.title) {
           $l.attrProp('title', data.title);
         }
